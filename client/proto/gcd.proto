@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package compute_service;
+
+service ComputeService {
+    rpc Compute (GcdRequest) returns (GcdResponse) {}
+}
+
+message GcdRequest {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message GcdResponse {
+    int64 result = 1;
+}

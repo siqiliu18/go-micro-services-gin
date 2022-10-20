@@ -1,0 +1,35 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  gcd-service-client
+spec:
+  selector:
+    app:  gcd-client
+  type:  NodePort
+  ports:
+  - port:  7002
+    targetPort:  7003
+    nodePort: 30007
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcd-client-deployment
+  labels:
+    app: gcd-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcd-client
+  template:
+    metadata:
+      labels:
+        app: gcd-client
+    spec:
+      containers:
+      - name: gcd-client-pod
+        image: gcd-client-image
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 7003
