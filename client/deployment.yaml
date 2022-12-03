@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     app:  gcd-client
-  type:  NodePort
+  type:  LoadBalancer
   ports:
   - port:  7002
     targetPort:  7003
-    nodePort: 30007
+    # nodePort: 30007
 ---
 apiVersion: apps/v1
 kind: Deployment
