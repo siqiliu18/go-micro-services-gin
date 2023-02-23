@@ -1,8 +1,5 @@
 # go-micro-services-gin
 
-## push command:
-git push https://siqiliu18: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@github.com/siqiliu18/go-micro-services-gin.git
-
 ## sources:
 1. https://outcrawl.com/getting-started-microservices-go-grpc-kubernetes (direct)
 2. https://tutorialedge.net/golang/go-grpc-beginners-tutorial/ (without container and service)
